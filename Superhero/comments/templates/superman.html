@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Superman</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+         <link rel="stylesheet" href="{% static "stylesheet.css" %}" />
+        <style>
+            body{background-image:url("http://wallpapercave.com/wp/q5rjCDR.jpg");}
+        </style>
+    </head>
+    <body>
+        <h1 class="row" style="font-size:60px ;color:white">Superman</h1>
+        <a href="/">Home</a>
+        <div >
+            <div id="comments">
+                <div class="row"><p>{{ obj5C }}<small> "{{ obj5A }}"</small></p></div><hr/>
+                <div class="row"><p>{{ obj4C }}<small> "{{ obj4A }}"</small></p></div><hr/>
+                <div class="row"><p>{{ obj3C }}<small> "{{ obj3A }}"</small></p></div><hr/>
+                <div class="row"><p>{{ obj2C }}<small> "{{ obj2A }}"</small></p></div><hr/>
+                <div class="row"><p>{{ obj1C }}<small> "{{ obj1A }}"</small></p></div><hr/>
+            </div>
+            <form  method="post" action=".">{% csrf_token %}
+                <div class="row">{{ mess }}</div>
+                <div class="row">{{ auth }}</div>
+                <div class="row"><input class="btn btn-primary" type="Submit" value="Post" /></div>
+            </form>
+        </div>
+
+    </body>
+</html>
